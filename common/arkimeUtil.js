@@ -210,7 +210,7 @@ class ArkimeUtil {
    */
   static missingResource (err, req, res, next) {
     res.status(404);
-    const msg = `Cannot locate resource requsted from ${req.path}`;
+    const msg = `Cannot locate resource requsted from ${safeStr(req.path)}`;
     console.log(msg);
     return res.send(msg);
   }
